@@ -44,18 +44,18 @@ namespace KnapSackTest
             // 
             // resultBox
             // 
-            this.resultBox.Location = new System.Drawing.Point(12, 221);
+            this.resultBox.Location = new System.Drawing.Point(66, 168);
             this.resultBox.Multiline = true;
             this.resultBox.Name = "resultBox";
-            this.resultBox.Size = new System.Drawing.Size(277, 84);
+            this.resultBox.Size = new System.Drawing.Size(123, 20);
             this.resultBox.TabIndex = 0;
             this.resultBox.TextChanged += new System.EventHandler(this.resultBox_TextChanged);
             // 
             // solveButton
             // 
-            this.solveButton.Location = new System.Drawing.Point(114, 192);
+            this.solveButton.Location = new System.Drawing.Point(18, 166);
             this.solveButton.Name = "solveButton";
-            this.solveButton.Size = new System.Drawing.Size(75, 23);
+            this.solveButton.Size = new System.Drawing.Size(42, 23);
             this.solveButton.TabIndex = 1;
             this.solveButton.Text = "Solve";
             this.solveButton.UseVisualStyleBackColor = true;

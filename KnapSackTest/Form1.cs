@@ -45,7 +45,7 @@ namespace KnapSackTest
 
             int result = SolveKnapSack(capacity, weight, value, itemsCount);
 
-            resultBox.Text = "Value Result : "+result.ToString()+"\n";
+            resultBox.Text = "Maximum Value : "+result.ToString()+"\n";
 
         }
 
