@@ -24,8 +24,22 @@ namespace KnapSackTest
         private void solveButton_Click(object sender, EventArgs e)
         {
 
-            int[] value = { 20,30,25,6,10 };
-            int[] weight = { 55, 10, 20, 30,50 };
+            //int[] value = { 20,30,25,6,10 };
+            string[] valueStr = valueBox.Text.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            int[] value = new int[valueStr.Length];
+            for (int i = 0; i < valueStr.Length; i++)
+            {
+                value[i] = Int32.Parse(valueStr[i]);
+            }
+
+            //int[] weight = { 55, 10, 20, 30,50 };
+            string[] weightStr = weightBox.Text.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            int[] weight = new int[weightStr.Length];
+            for (int i = 0; i < weightStr.Length; i++)
+            {
+                weight[i] = Int32.Parse(weightStr[i]);
+            }
+
             int capacity = Int32.Parse(capacityBox.Text);
             int itemsCount = weight.Length;
 
@@ -61,6 +75,11 @@ namespace KnapSackTest
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
         }
