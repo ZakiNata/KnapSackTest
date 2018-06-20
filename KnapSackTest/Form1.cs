@@ -135,6 +135,13 @@ namespace KnapSackTest
             weightBox.Text = "30,50,10,20";
             valueBox.Text = "5,40,15,50";
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            capacityBox.Text = "100";
+            weightBox.Text = "30,50,10,20,120,10,50";
+            valueBox.Text = "5,40,15,50,400,150,70";
+        }
     }
 
     class Bag : IEnumerable<Bag.Item>
