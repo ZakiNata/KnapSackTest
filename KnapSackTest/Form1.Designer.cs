@@ -40,6 +40,8 @@ namespace KnapSackTest
             this.label4 = new System.Windows.Forms.Label();
             this.valueBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.LPButton = new System.Windows.Forms.Button();
+            this.LPBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // resultBox
@@ -130,11 +132,31 @@ namespace KnapSackTest
             this.label5.TabIndex = 9;
             this.label5.Text = "Insert Values comma separated";
             // 
+            // LPButton
+            // 
+            this.LPButton.Location = new System.Drawing.Point(18, 211);
+            this.LPButton.Name = "LPButton";
+            this.LPButton.Size = new System.Drawing.Size(42, 23);
+            this.LPButton.TabIndex = 10;
+            this.LPButton.Text = "LP";
+            this.LPButton.UseVisualStyleBackColor = true;
+            this.LPButton.Click += new System.EventHandler(this.LPButton_Click);
+            // 
+            // LPBox
+            // 
+            this.LPBox.Location = new System.Drawing.Point(66, 213);
+            this.LPBox.Name = "LPBox";
+            this.LPBox.Size = new System.Drawing.Size(123, 20);
+            this.LPBox.TabIndex = 11;
+            this.LPBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(366, 317);
+            this.Controls.Add(this.LPBox);
+            this.Controls.Add(this.LPButton);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.valueBox);
             this.Controls.Add(this.label4);
@@ -165,6 +187,8 @@ namespace KnapSackTest
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox valueBox;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button LPButton;
+        private System.Windows.Forms.TextBox LPBox;
     }
 }
 

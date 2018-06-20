@@ -45,7 +45,7 @@ namespace KnapSackTest
 
             int result = SolveKnapSack(capacity, weight, value, itemsCount);
 
-            resultBox.Text = "Maximum Value : "+result.ToString()+"\n";
+            resultBox.Text = "Maximum Value : "+result.ToString();
 
         }
 
@@ -82,6 +82,160 @@ namespace KnapSackTest
         private void textBox1_TextChanged_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LPButton_Click(object sender, EventArgs e)
+        {
+            //int[] value = { 20,30,25,6,10 };
+            string[] valueStr = valueBox.Text.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            int[] value = new int[valueStr.Length];
+            for (int i = 0; i < valueStr.Length; i++)
+            {
+                value[i] = Int32.Parse(valueStr[i]);
+            }
+
+            //int[] weight = { 55, 10, 20, 30,50 };
+            string[] weightStr = weightBox.Text.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            int[] weight = new int[weightStr.Length];
+            for (int i = 0; i < weightStr.Length; i++)
+            {
+                weight[i] = Int32.Parse(weightStr[i]);
+            }
+
+            int capacity = Int32.Parse(capacityBox.Text);
+            int itemsCount = weight.Length;
+
+
+            List<Bag.Item> knapsackItems = new List<Bag.Item>();
+
+            for (int j=0; j< itemsCount;j++)
+            {
+                knapsackItems.Add(new Bag.Item() { Name = weight[j].ToString(), Weight = weight[j], Value = value[j] });
+            }
+
+            Bag b = new Bag();
+            
+            b.setCapacity(capacity);
+            b.Calculate(knapsackItems);
+            //b.All(x => { Console.WriteLine(x); return true; });
+            //Console.WriteLine(b.Sum(x => x.Weight));
+            //Console.ReadKey();
+
+            LPBox.Text = "Maximum Value: "+b.Sum(x => x.Value).ToString();
+        }
+    }
+
+    class Bag : IEnumerable<Bag.Item>
+    {
+        List<Item> items;
+        int MaxWeightAllowed;
+
+        public Bag()
+        {
+            items = new List<Item>();
+        }
+
+        void AddItem(Item i)
+        {
+            if ((TotalWeight + i.Weight) <= MaxWeightAllowed)
+                items.Add(i);
+        }
+
+        public void setCapacity(int capacity)
+        {
+            MaxWeightAllowed = capacity;
+        }
+
+        public void Calculate(List<Item> items)
+        {
+            foreach (Item i in Sorte(items))
+            {
+                AddItem(i);
+            }
+        }
+
+        List<Item> Sorte(List<Item> inputItems)
+        {
+            List<Item> choosenItems = new List<Item>();
+            for (int i = 0; i < inputItems.Count; i++)
+            {
+                int j = -1;
+                if (i == 0)
+                {
+                    choosenItems.Add(inputItems[i]);
+                }
+                if (i > 0)
+                {
+                    if (!RecursiveF(inputItems, choosenItems, i, choosenItems.Count - 1, false, ref j))
+                    {
+                        choosenItems.Add(inputItems[i]);
+                    }
+                }
+            }
+            return choosenItems;
+        }
+
+        bool RecursiveF(List<Item> knapsackItems, List<Item> choosenItems, int i, int lastBound, bool dec, ref int indxToAdd)
+        {
+            if (!(lastBound < 0))
+            {
+                if (knapsackItems[i].ResultWV < choosenItems[lastBound].ResultWV)
+                {
+                    indxToAdd = lastBound;
+                }
+                return RecursiveF(knapsackItems, choosenItems, i, lastBound - 1, true, ref indxToAdd);
+            }
+            if (indxToAdd > -1)
+            {
+                choosenItems.Insert(indxToAdd, knapsackItems[i]);
+                return true;
+            }
+            return false;
+        }
+
+        #region IEnumerable<Item> Members
+        IEnumerator<Item> IEnumerable<Item>.GetEnumerator()
+        {
+            foreach (Item i in items)
+                yield return i;
+        }
+        #endregion
+
+        #region IEnumerable Members
+        System.Collections.IEnumerator System.Collections.IEnumerable.GetEnumerator()
+        {
+            return items.GetEnumerator();
+        }
+        #endregion
+
+        public int TotalWeight
+        {
+            get
+            {
+                var sum = 0;
+                foreach (Item i in this)
+                {
+                    sum += i.Weight;
+                }
+                return sum;
+            }
+        }
+
+        public class Item
+        {
+            public string Name { get; set; }
+            public int Weight { get; set; }
+            public int Value { get; set; }
+            public int ResultWV { get { return Weight - Value; } }
+            public override string ToString()
+            {
+                return "Name : " + Name + "        Weight : " + Weight + "       Value : " + Value + "     ResultWV : " + ResultWV;
+            }
         }
     }
 }
