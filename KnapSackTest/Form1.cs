@@ -128,6 +128,13 @@ namespace KnapSackTest
 
             LPBox.Text = "Maximum Value: "+b.Sum(x => x.Value).ToString();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            capacityBox.Text = "50";
+            weightBox.Text = "30,50,10,20";
+            valueBox.Text = "5,40,15,50";
+        }
     }
 
     class Bag : IEnumerable<Bag.Item>
