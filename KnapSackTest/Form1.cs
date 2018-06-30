@@ -142,6 +142,50 @@ namespace KnapSackTest
             weightBox.Text = "30,50,10,20,120,10,50";
             valueBox.Text = "5,40,15,50,400,150,70";
         }
+
+        private void DynamicButton_Click(object sender, EventArgs e)
+        {
+            string[] valueStr = valueBox.Text.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            int[] value = new int[valueStr.Length];
+            for (int i = 0; i < valueStr.Length; i++)
+            {
+                value[i] = Int32.Parse(valueStr[i]);
+            }
+
+            //int[] weight = { 55, 10, 20, 30,50 };
+            string[] weightStr = weightBox.Text.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            int[] weight = new int[weightStr.Length];
+            for (int i = 0; i < weightStr.Length; i++)
+            {
+                weight[i] = Int32.Parse(weightStr[i]);
+            }
+
+            int capacity = Int32.Parse(capacityBox.Text);
+            int itemsCount = weight.Length;
+
+
+            List<Bag.Item> knapsackItems = new List<Bag.Item>();
+
+            for (int j = 0; j < itemsCount; j++)
+            {
+                knapsackItems.Add(new Bag.Item() { Name = weight[j].ToString(), Weight = weight[j], Value = value[j] });
+            }
+
+            Bag b = new Bag();
+
+            b.setCapacity(capacity);
+
+            List<Bag.Item> choosenItems = new List<Bag.Item>();
+            choosenItems = b.DynamicProgramming(knapsackItems);
+            LPBox.Text = "Maximum Value: " + choosenItems.Sum(x => x.Value).ToString();
+        }
+
+        private void Sample3Button_Click(object sender, EventArgs e)
+        {
+            capacityBox.Text = "7";
+            weightBox.Text = "1,3,4,5";
+            valueBox.Text = "1,4,5,7";
+        }
     }
 
     class Bag : IEnumerable<Bag.Item>
@@ -163,6 +207,61 @@ namespace KnapSackTest
         public void setCapacity(int capacity)
         {
             MaxWeightAllowed = capacity;
+        }
+
+        public List<Bag.Item> DynamicProgramming(List<Item> items)
+        {
+            List<Bag.Item> choosenItems = new List<Bag.Item>();
+            int itemsCount = items.Count;
+            int capacity = MaxWeightAllowed;
+            int[,] K = new int[itemsCount + 1, capacity + 1];
+
+            for (int i = 0; i <= itemsCount; ++i)
+            {
+                for (int w = 0; w <= capacity; ++w)
+                {
+                    if (i == 0 || w == 0)
+                        K[i, w] = 0;
+                    else if (items[i - 1].Weight <= w) 
+                        K[i, w] = Math.Max(items[i - 1].Value + K[i - 1, w - items[i - 1].Weight], K[i - 1, w]);
+                    else
+                        K[i, w] = K[i - 1, w];
+                }
+            }
+
+            int m = capacity;
+            int n = itemsCount;
+
+            while (m >= 0 && n >= 0)
+            {
+                if (m == 0 || n == 0 || K[n, m] == 0)
+                {
+                    if (K[n, m] == 0)
+                        break;
+                    else
+                    {
+                        choosenItems.Add(items[0]);
+                        n--;
+                    }
+                }
+                else if (K[n, m] == K[n - 1, m])
+                {
+                    n--;
+                }
+                else if (K[n, m] == K[n, m - 1])
+                {
+                    m--;
+                }
+                else if (K[n,m] != K[n - 1, m] && K[n, m] != K[n, m-1])
+                {
+                    choosenItems.Add(items[n-1]);
+                    m -= items[n - 1].Weight;
+                    n --;
+                }
+
+            }
+
+            return choosenItems;
         }
 
         public void Calculate(List<Item> items)

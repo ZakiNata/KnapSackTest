@@ -44,6 +44,8 @@ namespace KnapSackTest
             this.LPBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.DynamicButton = new System.Windows.Forms.Button();
+            this.Sample3Button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // resultBox
@@ -172,11 +174,33 @@ namespace KnapSackTest
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // DynamicButton
+            // 
+            this.DynamicButton.Location = new System.Drawing.Point(195, 204);
+            this.DynamicButton.Name = "DynamicButton";
+            this.DynamicButton.Size = new System.Drawing.Size(131, 23);
+            this.DynamicButton.TabIndex = 14;
+            this.DynamicButton.Text = "Dynamic Programming";
+            this.DynamicButton.UseVisualStyleBackColor = true;
+            this.DynamicButton.Click += new System.EventHandler(this.DynamicButton_Click);
+            // 
+            // Sample3Button
+            // 
+            this.Sample3Button.Location = new System.Drawing.Point(176, 26);
+            this.Sample3Button.Name = "Sample3Button";
+            this.Sample3Button.Size = new System.Drawing.Size(75, 23);
+            this.Sample3Button.TabIndex = 15;
+            this.Sample3Button.Text = "Sample 3";
+            this.Sample3Button.UseVisualStyleBackColor = true;
+            this.Sample3Button.Click += new System.EventHandler(this.Sample3Button_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(366, 317);
+            this.Controls.Add(this.Sample3Button);
+            this.Controls.Add(this.DynamicButton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.LPBox);
@@ -215,6 +239,8 @@ namespace KnapSackTest
         private System.Windows.Forms.TextBox LPBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button DynamicButton;
+        private System.Windows.Forms.Button Sample3Button;
     }
 }
 
