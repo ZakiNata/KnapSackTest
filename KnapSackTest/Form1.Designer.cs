@@ -46,11 +46,17 @@ namespace KnapSackTest
             this.button2 = new System.Windows.Forms.Button();
             this.DynamicButton = new System.Windows.Forms.Button();
             this.Sample3Button = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.SolveKsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // resultBox
             // 
-            this.resultBox.Location = new System.Drawing.Point(66, 204);
+            this.resultBox.Location = new System.Drawing.Point(79, 249);
             this.resultBox.Multiline = true;
             this.resultBox.Name = "resultBox";
             this.resultBox.Size = new System.Drawing.Size(123, 20);
@@ -59,7 +65,7 @@ namespace KnapSackTest
             // 
             // solveButton
             // 
-            this.solveButton.Location = new System.Drawing.Point(18, 202);
+            this.solveButton.Location = new System.Drawing.Point(305, 377);
             this.solveButton.Name = "solveButton";
             this.solveButton.Size = new System.Drawing.Size(42, 23);
             this.solveButton.TabIndex = 1;
@@ -79,7 +85,7 @@ namespace KnapSackTest
             // 
             // capacityBox
             // 
-            this.capacityBox.Location = new System.Drawing.Point(66, 69);
+            this.capacityBox.Location = new System.Drawing.Point(79, 69);
             this.capacityBox.Name = "capacityBox";
             this.capacityBox.Size = new System.Drawing.Size(123, 20);
             this.capacityBox.TabIndex = 3;
@@ -96,7 +102,7 @@ namespace KnapSackTest
             // 
             // weightBox
             // 
-            this.weightBox.Location = new System.Drawing.Point(66, 112);
+            this.weightBox.Location = new System.Drawing.Point(79, 112);
             this.weightBox.Name = "weightBox";
             this.weightBox.Size = new System.Drawing.Size(123, 20);
             this.weightBox.TabIndex = 5;
@@ -105,7 +111,7 @@ namespace KnapSackTest
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(197, 115);
+            this.label3.Location = new System.Drawing.Point(209, 115);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(157, 13);
             this.label3.TabIndex = 6;
@@ -122,7 +128,7 @@ namespace KnapSackTest
             // 
             // valueBox
             // 
-            this.valueBox.Location = new System.Drawing.Point(66, 150);
+            this.valueBox.Location = new System.Drawing.Point(79, 150);
             this.valueBox.Name = "valueBox";
             this.valueBox.Size = new System.Drawing.Size(123, 20);
             this.valueBox.TabIndex = 8;
@@ -130,7 +136,7 @@ namespace KnapSackTest
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(197, 153);
+            this.label5.Location = new System.Drawing.Point(209, 153);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(155, 13);
             this.label5.TabIndex = 9;
@@ -138,7 +144,7 @@ namespace KnapSackTest
             // 
             // LPButton
             // 
-            this.LPButton.Location = new System.Drawing.Point(18, 247);
+            this.LPButton.Location = new System.Drawing.Point(257, 377);
             this.LPButton.Name = "LPButton";
             this.LPButton.Size = new System.Drawing.Size(42, 23);
             this.LPButton.TabIndex = 10;
@@ -148,7 +154,7 @@ namespace KnapSackTest
             // 
             // LPBox
             // 
-            this.LPBox.Location = new System.Drawing.Point(66, 249);
+            this.LPBox.Location = new System.Drawing.Point(79, 290);
             this.LPBox.Name = "LPBox";
             this.LPBox.Size = new System.Drawing.Size(123, 20);
             this.LPBox.TabIndex = 11;
@@ -176,7 +182,7 @@ namespace KnapSackTest
             // 
             // DynamicButton
             // 
-            this.DynamicButton.Location = new System.Drawing.Point(195, 204);
+            this.DynamicButton.Location = new System.Drawing.Point(353, 377);
             this.DynamicButton.Name = "DynamicButton";
             this.DynamicButton.Size = new System.Drawing.Size(131, 23);
             this.DynamicButton.TabIndex = 14;
@@ -194,11 +200,73 @@ namespace KnapSackTest
             this.Sample3Button.UseVisualStyleBackColor = true;
             this.Sample3Button.Click += new System.EventHandler(this.Sample3Button_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(15, 252);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(61, 13);
+            this.label6.TabIndex = 16;
+            this.label6.Text = "Dynamic P.";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(15, 293);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 13);
+            this.label7.TabIndex = 17;
+            this.label7.Text = "Linear P.";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(109, 224);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(57, 13);
+            this.label8.TabIndex = 18;
+            this.label8.Text = "Max Value";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(254, 224);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(71, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Items Chosen";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(385, 224);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(46, 13);
+            this.label10.TabIndex = 20;
+            this.label10.Text = "Runtime";
+            // 
+            // SolveKsButton
+            // 
+            this.SolveKsButton.Location = new System.Drawing.Point(79, 181);
+            this.SolveKsButton.Name = "SolveKsButton";
+            this.SolveKsButton.Size = new System.Drawing.Size(123, 23);
+            this.SolveKsButton.TabIndex = 21;
+            this.SolveKsButton.Text = "Solve Knapsack";
+            this.SolveKsButton.UseVisualStyleBackColor = true;
+            this.SolveKsButton.Click += new System.EventHandler(this.SolveKsButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(366, 317);
+            this.ClientSize = new System.Drawing.Size(496, 412);
+            this.Controls.Add(this.SolveKsButton);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.Sample3Button);
             this.Controls.Add(this.DynamicButton);
             this.Controls.Add(this.button2);
@@ -241,6 +309,12 @@ namespace KnapSackTest
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button DynamicButton;
         private System.Windows.Forms.Button Sample3Button;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button SolveKsButton;
     }
 }
 
