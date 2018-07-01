@@ -245,11 +245,11 @@ namespace KnapSackTest
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(385, 224);
+            this.label10.Location = new System.Drawing.Point(365, 224);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 13);
+            this.label10.Size = new System.Drawing.Size(99, 13);
             this.label10.TabIndex = 20;
-            this.label10.Text = "Runtime";
+            this.label10.Text = "Runtime (ms , ticks)";
             // 
             // SolveKsButton
             // 
