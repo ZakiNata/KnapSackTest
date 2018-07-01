@@ -45,7 +45,7 @@ namespace KnapSackTest
 
             int result = SolveKnapSack(capacity, weight, value, itemsCount);
 
-            resultBox.Text = "Maximum Value : "+result.ToString();
+            resultBox.Text = result.ToString();
 
         }
 
@@ -126,7 +126,7 @@ namespace KnapSackTest
             //Console.WriteLine(b.Sum(x => x.Weight));
             //Console.ReadKey();
 
-            LPBox.Text = "Maximum Value: "+b.Sum(x => x.Value).ToString();
+            LPBox.Text = b.Sum(x => x.Value).ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -177,7 +177,7 @@ namespace KnapSackTest
 
             List<Bag.Item> choosenItems = new List<Bag.Item>();
             choosenItems = b.DynamicProgramming(knapsackItems);
-            resultBox.Text = "Maximum Value: " + choosenItems.Sum(x => x.Value).ToString();
+            resultBox.Text = choosenItems.Sum(x => x.Value).ToString();
         }
 
         private void Sample3Button_Click(object sender, EventArgs e)
