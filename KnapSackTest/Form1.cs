@@ -161,11 +161,13 @@ namespace KnapSackTest
             LPButton_Click(sender, e);
             watch.Stop();
             var LPelapsedMs = watch.ElapsedMilliseconds;
+            LPRuntimeBox.Text = LPelapsedMs.ToString();
 
             var watch2 = System.Diagnostics.Stopwatch.StartNew();
             DynamicButton_Click(sender, e);
             watch2.Stop();
-            var DPelapsedMs = watch2.ElapsedMilliseconds; 
+            var DPelapsedMs = watch2.ElapsedMilliseconds;
+            DPRuntimeBox.Text = DPelapsedMs.ToString();
         }
     }
 

@@ -52,6 +52,8 @@ namespace KnapSackTest
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.SolveKsButton = new System.Windows.Forms.Button();
+            this.DPRuntimeBox = new System.Windows.Forms.TextBox();
+            this.LPRuntimeBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // resultBox
@@ -259,11 +261,29 @@ namespace KnapSackTest
             this.SolveKsButton.UseVisualStyleBackColor = true;
             this.SolveKsButton.Click += new System.EventHandler(this.SolveKsButton_Click);
             // 
+            // DPRuntimeBox
+            // 
+            this.DPRuntimeBox.Location = new System.Drawing.Point(368, 249);
+            this.DPRuntimeBox.Multiline = true;
+            this.DPRuntimeBox.Name = "DPRuntimeBox";
+            this.DPRuntimeBox.Size = new System.Drawing.Size(78, 20);
+            this.DPRuntimeBox.TabIndex = 22;
+            // 
+            // LPRuntimeBox
+            // 
+            this.LPRuntimeBox.Location = new System.Drawing.Point(368, 290);
+            this.LPRuntimeBox.Multiline = true;
+            this.LPRuntimeBox.Name = "LPRuntimeBox";
+            this.LPRuntimeBox.Size = new System.Drawing.Size(78, 20);
+            this.LPRuntimeBox.TabIndex = 23;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 412);
+            this.Controls.Add(this.LPRuntimeBox);
+            this.Controls.Add(this.DPRuntimeBox);
             this.Controls.Add(this.SolveKsButton);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
@@ -318,6 +338,8 @@ namespace KnapSackTest
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button SolveKsButton;
+        private System.Windows.Forms.TextBox DPRuntimeBox;
+        private System.Windows.Forms.TextBox LPRuntimeBox;
     }
 }
 
