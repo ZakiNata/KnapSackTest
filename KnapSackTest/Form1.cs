@@ -152,8 +152,20 @@ namespace KnapSackTest
 
         private void SolveKsButton_Click(object sender, EventArgs e)
         {
-            LPButton_Click(sender,e);
+            //var watch = System.Diagnostics.Stopwatch.StartNew();
+            //// the code that you want to measure comes here
+            //watch.Stop();
+            //var elapsedMs = watch.ElapsedMilliseconds;
+
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            LPButton_Click(sender, e);
+            watch.Stop();
+            var LPelapsedMs = watch.ElapsedMilliseconds;
+
+            var watch2 = System.Diagnostics.Stopwatch.StartNew();
             DynamicButton_Click(sender, e);
+            watch2.Stop();
+            var DPelapsedMs = watch2.ElapsedMilliseconds; 
         }
     }
 
