@@ -71,6 +71,7 @@ namespace KnapSackTest
             this.solveButton.TabIndex = 1;
             this.solveButton.Text = "Solve";
             this.solveButton.UseVisualStyleBackColor = true;
+            this.solveButton.Visible = false;
             this.solveButton.Click += new System.EventHandler(this.solveButton_Click);
             // 
             // label1
@@ -150,6 +151,7 @@ namespace KnapSackTest
             this.LPButton.TabIndex = 10;
             this.LPButton.Text = "LP";
             this.LPButton.UseVisualStyleBackColor = true;
+            this.LPButton.Visible = false;
             this.LPButton.Click += new System.EventHandler(this.LPButton_Click);
             // 
             // LPBox
@@ -188,6 +190,7 @@ namespace KnapSackTest
             this.DynamicButton.TabIndex = 14;
             this.DynamicButton.Text = "Dynamic Programming";
             this.DynamicButton.UseVisualStyleBackColor = true;
+            this.DynamicButton.Visible = false;
             this.DynamicButton.Click += new System.EventHandler(this.DynamicButton_Click);
             // 
             // Sample3Button
