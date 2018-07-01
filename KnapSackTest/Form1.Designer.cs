@@ -58,10 +58,10 @@ namespace KnapSackTest
             // 
             // resultBox
             // 
-            this.resultBox.Location = new System.Drawing.Point(79, 293);
+            this.resultBox.Location = new System.Drawing.Point(93, 293);
             this.resultBox.Multiline = true;
             this.resultBox.Name = "resultBox";
-            this.resultBox.Size = new System.Drawing.Size(123, 20);
+            this.resultBox.Size = new System.Drawing.Size(58, 20);
             this.resultBox.TabIndex = 0;
             this.resultBox.TextChanged += new System.EventHandler(this.resultBox_TextChanged);
             // 
@@ -160,9 +160,9 @@ namespace KnapSackTest
             // 
             // LPBox
             // 
-            this.LPBox.Location = new System.Drawing.Point(79, 334);
+            this.LPBox.Location = new System.Drawing.Point(93, 334);
             this.LPBox.Name = "LPBox";
-            this.LPBox.Size = new System.Drawing.Size(123, 20);
+            this.LPBox.Size = new System.Drawing.Size(58, 20);
             this.LPBox.TabIndex = 11;
             this.LPBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_2);
             // 
@@ -229,7 +229,7 @@ namespace KnapSackTest
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(109, 268);
+            this.label8.Location = new System.Drawing.Point(90, 268);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 13);
             this.label8.TabIndex = 18;
@@ -238,7 +238,7 @@ namespace KnapSackTest
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(254, 268);
+            this.label9.Location = new System.Drawing.Point(195, 268);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 13);
             this.label9.TabIndex = 19;
