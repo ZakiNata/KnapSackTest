@@ -58,7 +58,7 @@ namespace KnapSackTest
             // 
             // resultBox
             // 
-            this.resultBox.Location = new System.Drawing.Point(79, 249);
+            this.resultBox.Location = new System.Drawing.Point(79, 293);
             this.resultBox.Multiline = true;
             this.resultBox.Name = "resultBox";
             this.resultBox.Size = new System.Drawing.Size(123, 20);
@@ -107,23 +107,24 @@ namespace KnapSackTest
             // 
             this.weightBox.Location = new System.Drawing.Point(79, 112);
             this.weightBox.Name = "weightBox";
-            this.weightBox.Size = new System.Drawing.Size(123, 20);
+            this.weightBox.Size = new System.Drawing.Size(367, 20);
             this.weightBox.TabIndex = 5;
             this.weightBox.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(209, 115);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(15, 135);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(157, 13);
+            this.label3.Size = new System.Drawing.Size(136, 12);
             this.label3.TabIndex = 6;
             this.label3.Text = "Insert Weight comma separated";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 153);
+            this.label4.Location = new System.Drawing.Point(15, 173);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 7;
@@ -131,17 +132,18 @@ namespace KnapSackTest
             // 
             // valueBox
             // 
-            this.valueBox.Location = new System.Drawing.Point(79, 150);
+            this.valueBox.Location = new System.Drawing.Point(79, 170);
             this.valueBox.Name = "valueBox";
-            this.valueBox.Size = new System.Drawing.Size(123, 20);
+            this.valueBox.Size = new System.Drawing.Size(367, 20);
             this.valueBox.TabIndex = 8;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(209, 153);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(17, 193);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(155, 13);
+            this.label5.Size = new System.Drawing.Size(136, 12);
             this.label5.TabIndex = 9;
             this.label5.Text = "Insert Values comma separated";
             // 
@@ -158,7 +160,7 @@ namespace KnapSackTest
             // 
             // LPBox
             // 
-            this.LPBox.Location = new System.Drawing.Point(79, 290);
+            this.LPBox.Location = new System.Drawing.Point(79, 334);
             this.LPBox.Name = "LPBox";
             this.LPBox.Size = new System.Drawing.Size(123, 20);
             this.LPBox.TabIndex = 11;
@@ -208,7 +210,7 @@ namespace KnapSackTest
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 252);
+            this.label6.Location = new System.Drawing.Point(15, 296);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 13);
             this.label6.TabIndex = 16;
@@ -218,7 +220,7 @@ namespace KnapSackTest
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 293);
+            this.label7.Location = new System.Drawing.Point(15, 337);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 17;
@@ -227,7 +229,7 @@ namespace KnapSackTest
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(109, 224);
+            this.label8.Location = new System.Drawing.Point(109, 268);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 13);
             this.label8.TabIndex = 18;
@@ -236,7 +238,7 @@ namespace KnapSackTest
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(254, 224);
+            this.label9.Location = new System.Drawing.Point(254, 268);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 13);
             this.label9.TabIndex = 19;
@@ -245,7 +247,7 @@ namespace KnapSackTest
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(365, 224);
+            this.label10.Location = new System.Drawing.Point(365, 268);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(99, 13);
             this.label10.TabIndex = 20;
@@ -253,7 +255,7 @@ namespace KnapSackTest
             // 
             // SolveKsButton
             // 
-            this.SolveKsButton.Location = new System.Drawing.Point(79, 181);
+            this.SolveKsButton.Location = new System.Drawing.Point(323, 209);
             this.SolveKsButton.Name = "SolveKsButton";
             this.SolveKsButton.Size = new System.Drawing.Size(123, 23);
             this.SolveKsButton.TabIndex = 21;
@@ -263,7 +265,7 @@ namespace KnapSackTest
             // 
             // DPRuntimeBox
             // 
-            this.DPRuntimeBox.Location = new System.Drawing.Point(368, 249);
+            this.DPRuntimeBox.Location = new System.Drawing.Point(368, 293);
             this.DPRuntimeBox.Multiline = true;
             this.DPRuntimeBox.Name = "DPRuntimeBox";
             this.DPRuntimeBox.Size = new System.Drawing.Size(78, 20);
@@ -271,7 +273,7 @@ namespace KnapSackTest
             // 
             // LPRuntimeBox
             // 
-            this.LPRuntimeBox.Location = new System.Drawing.Point(368, 290);
+            this.LPRuntimeBox.Location = new System.Drawing.Point(368, 334);
             this.LPRuntimeBox.Multiline = true;
             this.LPRuntimeBox.Name = "LPRuntimeBox";
             this.LPRuntimeBox.Size = new System.Drawing.Size(78, 20);
