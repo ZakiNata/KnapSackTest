@@ -291,6 +291,7 @@ namespace KnapSackTest
             this.BFbutton.TabIndex = 24;
             this.BFbutton.Text = "Brute Force";
             this.BFbutton.UseVisualStyleBackColor = true;
+            this.BFbutton.Visible = false;
             this.BFbutton.Click += new System.EventHandler(this.BFbutton_Click);
             // 
             // BFRuntimeBox

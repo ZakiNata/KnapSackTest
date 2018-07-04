@@ -160,7 +160,6 @@ namespace KnapSackTest
             //var elapsedMs = watch.ElapsedMilliseconds;
 
             var watch = System.Diagnostics.Stopwatch.StartNew();
-            //watch.Reset();
             LPButton_Click(sender, e);
             watch.Stop();
             var LPelapsedMs = watch.ElapsedMilliseconds;
@@ -168,12 +167,19 @@ namespace KnapSackTest
             LPRuntimeBox.Text = LPelapsedMs.ToString()+" , "+LPTicks.ToString();
 
             var watch2 = System.Diagnostics.Stopwatch.StartNew();
-            //watch2.Reset();
             DynamicButton_Click(sender, e);
             watch2.Stop();
             var DPelapsedMs = watch2.ElapsedMilliseconds;
             var DPTicks = watch2.ElapsedTicks;
             DPRuntimeBox.Text = DPelapsedMs.ToString()+" , "+DPTicks.ToString();
+
+            //BFbutton_Click
+            var watch3 = System.Diagnostics.Stopwatch.StartNew();
+            BFbutton_Click(sender, e);
+            watch3.Stop();
+            var BFelapsedMs = watch3.ElapsedMilliseconds;
+            var BFTicks = watch3.ElapsedTicks;
+            BFRuntimeBox.Text = BFelapsedMs.ToString() + " , " + BFTicks.ToString();
         }
 
         private void BFbutton_Click(object sender, EventArgs e)
