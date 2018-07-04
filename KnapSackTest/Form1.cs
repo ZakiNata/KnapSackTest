@@ -85,6 +85,14 @@ namespace KnapSackTest
             //Console.ReadKey();
 
             LPBox.Text = b.Sum(x => x.Value).ToString();
+
+            string itemsChosen = "";
+            List<Bag.Item>  choosenItems = b.ToList();
+            for (int k = 0; k < choosenItems.Count; k++)
+            {
+                itemsChosen += choosenItems[k].Weight.ToString() + " ";
+            }
+            LPItemsBox.Text = itemsChosen;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -136,6 +144,14 @@ namespace KnapSackTest
             List<Bag.Item> choosenItems = new List<Bag.Item>();
             choosenItems = b.DynamicProgramming(knapsackItems);
             resultBox.Text = choosenItems.Sum(x => x.Value).ToString();
+
+            string itemsChosen = "";
+            for (int k = 0; k < choosenItems.Count; k++)
+            {
+                itemsChosen += choosenItems[k].Weight.ToString() + " ";
+            }
+
+            DPItemsBox.Text = itemsChosen;
         }
 
 
@@ -217,6 +233,14 @@ namespace KnapSackTest
             List<Bag.Item> choosenItems = new List<Bag.Item>();
             choosenItems = b.BruteForce(knapsackItems);
             BFBox.Text = choosenItems.Sum(x => x.Value).ToString();
+
+            string itemsChosen = "";
+            for(int k=0; k < choosenItems.Count ;k++)
+            {
+                itemsChosen += choosenItems[k].Weight.ToString() + " ";
+            }
+
+            BFItemsBox.Text = itemsChosen;
         }
     }
 

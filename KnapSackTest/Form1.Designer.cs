@@ -30,6 +30,7 @@ namespace KnapSackTest
         /// </summary>
         private void InitializeComponent()
         {
+            this.DPItemsBox = new System.Windows.Forms.TextBox();
             this.resultBox = new System.Windows.Forms.TextBox();
             this.solveButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,7 +59,16 @@ namespace KnapSackTest
             this.BFRuntimeBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.BFBox = new System.Windows.Forms.TextBox();
+            this.BFItemsBox = new System.Windows.Forms.TextBox();
+            this.LPItemsBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
+            // 
+            // DPItemsBox
+            // 
+            this.DPItemsBox.Location = new System.Drawing.Point(176, 304);
+            this.DPItemsBox.Name = "DPItemsBox";
+            this.DPItemsBox.Size = new System.Drawing.Size(171, 20);
+            this.DPItemsBox.TabIndex = 29;
             // 
             // resultBox
             // 
@@ -242,7 +252,7 @@ namespace KnapSackTest
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(195, 251);
+            this.label9.Location = new System.Drawing.Point(179, 251);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 13);
             this.label9.TabIndex = 19;
@@ -319,11 +329,28 @@ namespace KnapSackTest
             this.BFBox.Size = new System.Drawing.Size(58, 20);
             this.BFBox.TabIndex = 25;
             // 
+            // BFItemsBox
+            // 
+            this.BFItemsBox.Location = new System.Drawing.Point(176, 267);
+            this.BFItemsBox.Name = "BFItemsBox";
+            this.BFItemsBox.Size = new System.Drawing.Size(171, 20);
+            this.BFItemsBox.TabIndex = 28;
+            // 
+            // LPItemsBox
+            // 
+            this.LPItemsBox.Location = new System.Drawing.Point(176, 345);
+            this.LPItemsBox.Name = "LPItemsBox";
+            this.LPItemsBox.Size = new System.Drawing.Size(171, 20);
+            this.LPItemsBox.TabIndex = 30;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 412);
+            this.Controls.Add(this.LPItemsBox);
+            this.Controls.Add(this.DPItemsBox);
+            this.Controls.Add(this.BFItemsBox);
             this.Controls.Add(this.BFRuntimeBox);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.BFBox);
@@ -390,6 +417,9 @@ namespace KnapSackTest
         private System.Windows.Forms.TextBox BFRuntimeBox;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox BFBox;
+        private System.Windows.Forms.TextBox BFItemsBox;
+        private System.Windows.Forms.TextBox LPItemsBox;
+        private System.Windows.Forms.TextBox DPItemsBox;
     }
 }
 
