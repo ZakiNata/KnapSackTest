@@ -335,6 +335,14 @@ namespace KnapSackTest
                 }
             }
 
+            for (int n = 0; n < permutations.GetLength(1); n++)
+            {
+                if(permutations[chosenPermutation,n]==1)
+                {
+                    choosenItems.Add(items[n]);
+                }
+            }
+
             return choosenItems;
         }
 
