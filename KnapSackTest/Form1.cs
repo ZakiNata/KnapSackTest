@@ -314,7 +314,27 @@ namespace KnapSackTest
                     permutations[k, l] = bit;
                 }
             }
-            
+
+            int maxValue = 0;
+            int chosenPermutation = -1;
+
+            for (int m = 0; m < permutations.GetLength(0); m++)
+            {
+                int currentValue = 0;
+                int currentWeight = 0;
+                for (int n = 0; n < permutations.GetLength(1); n++)
+                {
+                    currentValue += permutations[m, n] * items[n].Value;
+                    currentWeight += permutations[m, n] * items[n].Weight;
+                }
+
+                if (currentValue > maxValue && currentWeight <= capacity)
+                {
+                    maxValue = currentValue;
+                    chosenPermutation = m;
+                }
+            }
+
             return choosenItems;
         }
 
