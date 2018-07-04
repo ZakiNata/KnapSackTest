@@ -242,6 +242,13 @@ namespace KnapSackTest
 
             BFItemsBox.Text = itemsChosen;
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            capacityBox.Text = "30";
+            weightBox.Text = "4,9,1,2,7,5,10,3,6,8";
+            valueBox.Text = "9,5,1,3,2,4,7,10,8,6";
+        }
     }
 
     class Bag : IEnumerable<Bag.Item>
@@ -335,7 +342,7 @@ namespace KnapSackTest
             for(int k=0;k < permutations.GetLength(0); k++)
             {
                 string binary = Convert.ToString(k, 2);
-                int temp = int.Parse(binary);
+                Int32 temp = Int32.Parse(binary);
 
                 for (int l=0; l < binary.Length ;l++)
                 {
