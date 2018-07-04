@@ -342,11 +342,11 @@ namespace KnapSackTest
             for(int k=0;k < permutations.GetLength(0); k++)
             {
                 string binary = Convert.ToString(k, 2);
-                Int32 temp = Int32.Parse(binary);
+                long temp = long.Parse(binary);
 
                 for (int l=0; l < binary.Length ;l++)
                 {
-                    int bit = temp % 10;
+                    int bit = (int)temp % 10;
                     temp = temp / 10;
                     permutations[k, l] = bit;
                 }
