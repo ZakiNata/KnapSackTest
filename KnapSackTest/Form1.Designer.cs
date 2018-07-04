@@ -54,11 +54,15 @@ namespace KnapSackTest
             this.SolveKsButton = new System.Windows.Forms.Button();
             this.DPRuntimeBox = new System.Windows.Forms.TextBox();
             this.LPRuntimeBox = new System.Windows.Forms.TextBox();
+            this.BFbutton = new System.Windows.Forms.Button();
+            this.BFRuntimeBox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.BFBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // resultBox
             // 
-            this.resultBox.Location = new System.Drawing.Point(93, 293);
+            this.resultBox.Location = new System.Drawing.Point(93, 304);
             this.resultBox.Multiline = true;
             this.resultBox.Name = "resultBox";
             this.resultBox.Size = new System.Drawing.Size(58, 20);
@@ -160,7 +164,7 @@ namespace KnapSackTest
             // 
             // LPBox
             // 
-            this.LPBox.Location = new System.Drawing.Point(93, 334);
+            this.LPBox.Location = new System.Drawing.Point(93, 345);
             this.LPBox.Name = "LPBox";
             this.LPBox.Size = new System.Drawing.Size(58, 20);
             this.LPBox.TabIndex = 11;
@@ -210,7 +214,7 @@ namespace KnapSackTest
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 296);
+            this.label6.Location = new System.Drawing.Point(15, 307);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(61, 13);
             this.label6.TabIndex = 16;
@@ -220,7 +224,7 @@ namespace KnapSackTest
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 337);
+            this.label7.Location = new System.Drawing.Point(15, 348);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 17;
@@ -229,7 +233,7 @@ namespace KnapSackTest
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(90, 268);
+            this.label8.Location = new System.Drawing.Point(90, 251);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(57, 13);
             this.label8.TabIndex = 18;
@@ -238,7 +242,7 @@ namespace KnapSackTest
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(195, 268);
+            this.label9.Location = new System.Drawing.Point(195, 251);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(71, 13);
             this.label9.TabIndex = 19;
@@ -247,7 +251,7 @@ namespace KnapSackTest
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(365, 268);
+            this.label10.Location = new System.Drawing.Point(365, 251);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(99, 13);
             this.label10.TabIndex = 20;
@@ -265,7 +269,7 @@ namespace KnapSackTest
             // 
             // DPRuntimeBox
             // 
-            this.DPRuntimeBox.Location = new System.Drawing.Point(368, 293);
+            this.DPRuntimeBox.Location = new System.Drawing.Point(368, 304);
             this.DPRuntimeBox.Multiline = true;
             this.DPRuntimeBox.Name = "DPRuntimeBox";
             this.DPRuntimeBox.Size = new System.Drawing.Size(78, 20);
@@ -273,17 +277,56 @@ namespace KnapSackTest
             // 
             // LPRuntimeBox
             // 
-            this.LPRuntimeBox.Location = new System.Drawing.Point(368, 334);
+            this.LPRuntimeBox.Location = new System.Drawing.Point(368, 345);
             this.LPRuntimeBox.Multiline = true;
             this.LPRuntimeBox.Name = "LPRuntimeBox";
             this.LPRuntimeBox.Size = new System.Drawing.Size(78, 20);
             this.LPRuntimeBox.TabIndex = 23;
+            // 
+            // BFbutton
+            // 
+            this.BFbutton.Location = new System.Drawing.Point(176, 377);
+            this.BFbutton.Name = "BFbutton";
+            this.BFbutton.Size = new System.Drawing.Size(75, 23);
+            this.BFbutton.TabIndex = 24;
+            this.BFbutton.Text = "Brute Force";
+            this.BFbutton.UseVisualStyleBackColor = true;
+            this.BFbutton.Click += new System.EventHandler(this.BFbutton_Click);
+            // 
+            // BFRuntimeBox
+            // 
+            this.BFRuntimeBox.Location = new System.Drawing.Point(369, 268);
+            this.BFRuntimeBox.Multiline = true;
+            this.BFRuntimeBox.Name = "BFRuntimeBox";
+            this.BFRuntimeBox.Size = new System.Drawing.Size(78, 20);
+            this.BFRuntimeBox.TabIndex = 27;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(16, 271);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(62, 13);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "Brute Force";
+            // 
+            // BFBox
+            // 
+            this.BFBox.Location = new System.Drawing.Point(94, 268);
+            this.BFBox.Multiline = true;
+            this.BFBox.Name = "BFBox";
+            this.BFBox.Size = new System.Drawing.Size(58, 20);
+            this.BFBox.TabIndex = 25;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 412);
+            this.Controls.Add(this.BFRuntimeBox);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.BFBox);
+            this.Controls.Add(this.BFbutton);
             this.Controls.Add(this.LPRuntimeBox);
             this.Controls.Add(this.DPRuntimeBox);
             this.Controls.Add(this.SolveKsButton);
@@ -342,6 +385,10 @@ namespace KnapSackTest
         private System.Windows.Forms.Button SolveKsButton;
         private System.Windows.Forms.TextBox DPRuntimeBox;
         private System.Windows.Forms.TextBox LPRuntimeBox;
+        private System.Windows.Forms.Button BFbutton;
+        private System.Windows.Forms.TextBox BFRuntimeBox;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox BFBox;
     }
 }
 

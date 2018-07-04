@@ -138,6 +138,8 @@ namespace KnapSackTest
             resultBox.Text = choosenItems.Sum(x => x.Value).ToString();
         }
 
+
+
         private void Sample3Button_Click(object sender, EventArgs e)
         {
             capacityBox.Text = "7";
@@ -172,6 +174,43 @@ namespace KnapSackTest
             var DPelapsedMs = watch2.ElapsedMilliseconds;
             var DPTicks = watch2.ElapsedTicks;
             DPRuntimeBox.Text = DPelapsedMs.ToString()+" , "+DPTicks.ToString();
+        }
+
+        private void BFbutton_Click(object sender, EventArgs e)
+        {
+            string[] valueStr = valueBox.Text.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            int[] value = new int[valueStr.Length];
+            for (int i = 0; i < valueStr.Length; i++)
+            {
+                value[i] = Int32.Parse(valueStr[i]);
+            }
+
+            //int[] weight = { 55, 10, 20, 30,50 };
+            string[] weightStr = weightBox.Text.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            int[] weight = new int[weightStr.Length];
+            for (int i = 0; i < weightStr.Length; i++)
+            {
+                weight[i] = Int32.Parse(weightStr[i]);
+            }
+
+            int capacity = Int32.Parse(capacityBox.Text);
+            int itemsCount = weight.Length;
+
+
+            List<Bag.Item> knapsackItems = new List<Bag.Item>();
+
+            for (int j = 0; j < itemsCount; j++)
+            {
+                knapsackItems.Add(new Bag.Item() { Name = weight[j].ToString(), Weight = weight[j], Value = value[j] });
+            }
+
+            Bag b = new Bag();
+
+            b.setCapacity(capacity);
+
+            List<Bag.Item> choosenItems = new List<Bag.Item>();
+            choosenItems = b.BruteForce(knapsackItems);
+            BFBox.Text = choosenItems.Sum(x => x.Value).ToString();
         }
     }
 
@@ -248,6 +287,34 @@ namespace KnapSackTest
 
             }
 
+            return choosenItems;
+        }
+
+
+        public List<Bag.Item> BruteForce(List<Item> items)
+        {
+            List<Bag.Item> choosenItems = new List<Bag.Item>();
+            int itemsCount = items.Count;
+            int capacity = MaxWeightAllowed;
+            int[,] permutations = new int[(int)Math.Pow(2,itemsCount), itemsCount];
+
+            for (int i = 0; i < permutations.GetLength(0); i++)
+                for (int j = 0; j < permutations.GetLength(1); j++)
+                    permutations[i,j] = 0;
+
+            for(int k=0;k < permutations.GetLength(0); k++)
+            {
+                string binary = Convert.ToString(k, 2);
+                int temp = int.Parse(binary);
+
+                for (int l=0; l < binary.Length ;l++)
+                {
+                    int bit = temp % 10;
+                    temp = temp / 10;
+                    permutations[k, l] = bit;
+                }
+            }
+            
             return choosenItems;
         }
 
