@@ -342,7 +342,7 @@ namespace KnapSackTest
             for(int k=0;k < permutations.GetLength(0); k++)
             {
                 string binary = Convert.ToString(k, 2);
-                long temp = long.Parse(binary);
+                ulong temp = ulong.Parse(binary);
 
                 for (int l=0; l < binary.Length ;l++)
                 {
