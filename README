@@ -1,0 +1,11 @@
+Knapsack Problem 0-1
+
+Definition
+The Knapsack problem can be defined as follows: Imagine having a knapsack that can hold up to a maximum weight, we have a set of items that each item weight is known and for each item we have a known value, the goal is to select items from the set that their weight sum won’t exceed the maximum weight allowed in the knapsack while getting the maximum value possible.
+To summarize, the problem can be defined as a linear programming problem such that we need to find the maximum value by selecting items without exceeding the maximum capacity
+
+Algorithms
+In order to solve the problem, we have different algorithms that we can use, I’ve chosen 3 of them 
+•	Brute Force
+•	Dynamic Programming 
+•	Linear Programming 
