@@ -9,3 +9,38 @@ In order to solve the problem, we have different algorithms that we can use, I�
 •	Brute Force
 •	Dynamic Programming 
 •	Linear Programming 
+
+Brute Force
+The brute force algorithm is to check all the possible combinations of items and check for the combination that will give the maximum value without exceeding the weight capacity 
+Steps 
+•	Create a matrix of dimensions: 2^items x items, this way we’ll have a line for each combination where each line will have 0 or 1 in each column that represents a different item
+•	Fill the combination matrix will all the possible combinations of items picking 
+•	Go over all the combinations/lines 
+o	Per line calculate the resultant weight and value 
+o	A certain item will be selected if the value in its column is 1 otherwise if 0 it won’t be selected 
+o	After calculating, if the weight sum is not exceeding the capacity and its value sum is the biggest so far: the line will be chosen to replace the current maximum combination 
+•	At the end we’ll have the combination that will solve the knapsack problem and we can know which items are chosen due to the columns with value of 1 
+
+Dynamic Programming 
+The Dynamic programming algorithm comes in to solve the knapsack problem in a more efficient way than the brute force 
+Steps
+•	Create a matrix of dimension: Items + 1 x Allowed capacity + 1 
+•	Each line represents an item, the first line represents the case of no item selected 
+•	In each line we’ll calculate the maximum value we can get given the items so far with the capacity allowed in the column
+•	Going over the cells we’ll insert the maximum value possible by calculating the maximum between the maximum value if the item is not chosen and the value if the item is not chosen. Of course, when choosing the item, we need to make sure the adding its weight we won’t exceed the capacity 
+•	At the end we’ll have the maximum value possible within the allowed capacity in the right bottom cell
+•	For determining the items chosen, we’ll backtrack in the matrix to know which items where chosen 
+
+Linear Programming 
+The linear programming algorithm is also a more efficient way to solve the problem but in a different way than the Dynamic programming algorithm
+Steps
+•	Build the equations set from the weight, values and the capacity
+•	Solve using the Microsoft Solver foundation simplex solver
+•	Extract the chosen items from the solver
+
+UI
+Provided a win form for the user to enable inserting the capacity, weight and values. Clicking the solve button will try solving the knapsack problem using the 3 algorithms, then it will display the results for each algorithm:
+•	Maximum Value
+•	Items Chosen 
+•	Runtime in ms / ticks 
+Also provided 4 buttons that loads predefined samples 
